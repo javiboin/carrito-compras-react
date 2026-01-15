@@ -12,5 +12,5 @@ Este proyecto es una aplicación de carrito de compras desarrollada con React. P
 ## Instalación
 1. Clona el repositorio:
    ```bash
-   git clone
+   git clone https://github.com/javiboin/carrito-compras-react.git
 
