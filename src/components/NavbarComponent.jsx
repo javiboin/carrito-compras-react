@@ -10,28 +10,27 @@ export const NavbarComponent = () => {
     const { shoppingList } = useContext(CartContext)
 
     return (
-        <>
-            <nav className="navbar navbar-expand-lg bg-body-tertiary">
-                <div className="container-fluid">
-                    <NavLink  to='/' className="navbar-brand" href="#">Super Compras</NavLink>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div className="navbar-nav">
-                            <NavLink to='/' className="nav-link">Productos</NavLink>
-                        </div>
-                        <div className="navbar-nav">
-                            <NavLink to='/carrito' className="nav-link">Carrito</NavLink>
-                        </div>
-                    </div>
-                    <NavLink to='/carrito' className='cart-icon'>
-                        <Badge badgeContent={shoppingList.length} color="primary">
-                            <ShoppingCartIcon />
-                        </Badge>
+        <header className="brut-header">
+            <nav className="brut-nav container">
+                <NavLink to='/' className="brut-brand">
+                    SUPER<span>COMPRAS</span>
+                </NavLink>
+
+                <div className="brut-nav-links">
+                    <NavLink to='/' className={({ isActive }) => `brut-link ${isActive ? 'brut-link--active' : ''}`}>
+                        Productos
+                    </NavLink>
+                    <NavLink to='/carrito' className={({ isActive }) => `brut-link ${isActive ? 'brut-link--active' : ''}`}>
+                        Carrito
                     </NavLink>
                 </div>
-            </nav>  
-        </>
+
+                <NavLink to='/carrito' className='brut-cart-btn'>
+                    <Badge badgeContent={shoppingList.length} color="primary">
+                        <ShoppingCartIcon />
+                    </Badge>
+                </NavLink>
+            </nav>
+        </header>
     )
 }
